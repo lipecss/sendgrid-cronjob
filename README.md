@@ -6,15 +6,7 @@ Este é um microserviço de agendamento de tarefas. Apriori iremos utiliza-los p
 
 Esse é o padrão para monstrare um **Schedules** nas bibliotecas de cron. Sei conceito é bem intuitivo e fácil de comprender.
 
-*    *    *    *    *    *
-┬    ┬    ┬    ┬    ┬    ┬
-│    │    │    │    │    │
-│    │    │    │    │    └ dias por semana (0 - 7) (0 or 7 is Sun)
-│    │    │    │    └───── mês (1 - 12)
-│    │    │    └────────── dias dos mês (1 - 31)
-│    │    └─────────────── horas (0 - 23)
-│    └──────────────────── minutos (0 - 59)
-└───────────────────────── segundos (0 - 59, Opcional)
+![](https://i.imgur.com/kg9hzDa.png)
 
 
 ## Regras ao JOB
