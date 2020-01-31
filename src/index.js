@@ -3,6 +3,10 @@ const sgMail = require('@sendgrid/mail')
 const axios = require('axios')
 const moment = require('moment')
 
+const express =  require('express')
+
+const app = express()
+
 const sendGridKey = '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'
 
 sgMail.setApiKey(sendGridKey)
@@ -79,3 +83,8 @@ function sendEmail(dev) {
     console.log('FOI')
     sgMail.send(msg)
 }
+
+
+app.listen(process.env.PORT || 3333, () => {
+    console.log('Executando')
+})
