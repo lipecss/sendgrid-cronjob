@@ -1,6 +1,6 @@
 # CRON JOB 
 
-Este é um microserviço de agendamento de tarefas. Apriori iremos utiliza-los para automatizar os envios de emails de aniversário para os usuários cadastrados em nossa plataforma. Ele utilizará, por meio de consutlas HTTP (axios) endpoints de noss API para a consulta e manipulação dos dados.
+Este é um microserviço de agendamento de tarefas. A priori iremos utiliza-los para automatizar os envios de emails de aniversário para os usuários cadastrados em nossa plataforma. Ele utilizará, por meio de consutlas HTTP (axios) endpoints de noss API para a consulta e manipulação dos dados.
 
 ## Estilo de Programação do CRON
 
