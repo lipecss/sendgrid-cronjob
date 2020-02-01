@@ -1,20 +1,51 @@
 # CRON JOB 
 
-Este é um microserviço de agendamento de tarefas. Apriori iremos utiliza-los para automatizar os envios de emails de aniversário para os usuários cadastrados em nossa plataforma. Ele utilizará, por meio de consutlas HTTP (axios) endpoints de noss API para a consulta e manipulação dos dados. 
+Este é um microserviço de agendamento de tarefas. Apriori iremos utiliza-los para automatizar os envios de emails de aniversário para os usuários cadastrados em nossa plataforma. Ele utilizará, por meio de consutlas HTTP (axios) endpoints de noss API para a consulta e manipulação dos dados.
 
 ## Estilo de Programação do CRON
 
-Esse é o padrão para monstrare um **Schedules** nas bibliotecas de cron. Sei conceito é bem intuitivo e fácil de comprender.
+Esse é o padrão para monstrare um **Schedules** nas bibliotecas de cron. Seu conceito é bem intuitivo e fácil de comprender.
 
 ![](https://i.imgur.com/kg9hzDa.png)
 
 
 ## Regras ao JOB
 
-Podemos também passar regreas, enquanto o aplicativo estiver em execução, ele será acionado. Aqui ele eserá executado todo dias as 12:30PM :
+Podemos também passar regreas, enquanto o aplicativo estiver em execução, ele será acionado. Aqui ele eserá executado todo dias as 07:00AM :
 
     var rule = new schedule.RecurrenceRule();
           rule.dayOfWeek = [new schedule.Range(0, 6)];
-          rule.hour = 12;
-          rule.minute = 30;
+          rule.hour = 07;
+          rule.minute = 0;
     
+## SCRIPTS
+
+**start:** Rodar projeto na produção lendo o diretorio buildado com o script build. Todo servidor web por padrão roda sempre o script Start.
+
+**dev:** Rodar o projeto localmente com o Nodemon.
+
+
+## **VARIAVEIS DE AMBIENTE**
+```
+SENDGRID_API_KEY=
+SENDGRID_TEMPLATE_ID=
+```
+
+- SENDGRID_API_KEY: Chave secreta fornecida pelo SendGrid 
+- SENDGRID_TEMPLATE_ID: Chave do template criado no projeto.
+
+## **COMO UTILIZAR?**
+
+Nesse projeto estamos enviando modelos transacionais dinâmicos, ou seja, teremos um teamplte com dados dinamicos sendo enviados. Caso tenha alguma duvida, [clique aqui](https://sendgrid.com/blog/how-to-use-sendgrids-dynamic-templates-for-your-transactional-emails/ "clique aqui") com criar seus templates e seu funcionamento. 
+
+![](https://i.imgur.com/iuqtzAZ.png)
+
+Lembre-se de editar no arquivo function.js as informações da função do [Sengrid](https://sendgrid.com/docs/for-developers/sending-email/v3-nodejs-code-example/ "Sengrid") de envio de email, passando suas informações conforme a documentação da API solicita:
+
+***from*** : Email de quem está enviando - *string*
+***subject*** : Assunto da mensagem - *string*
+**dynamic_template_data** : Local onde voce informa as substituições do seu email. - *JSON*
+
+![](https://i.imgur.com/I0Gbbvr.png)
+
+- O valor aquie passao vem dos dados de usuários 'mockado', do arquivo **users.js**, passando seu nome dinamicamente.
