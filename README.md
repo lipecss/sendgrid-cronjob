@@ -50,4 +50,4 @@ Lembre-se de editar no arquivo **function.js** as informações da função do [
 
 ![](https://i.imgur.com/I0Gbbvr.png)
 
-- O valor aquie passao vem dos dados de usuários 'mockado', do arquivo **users.js**, passando seu nome dinamicamente.
+- O valor aqui passado vem dos dados de usuários 'mockado', no arquivo **users.js**,dados dinâmicos.
