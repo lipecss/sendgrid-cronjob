@@ -34,7 +34,7 @@ else
     require('dotenv').config({ path: '/var/www/cron-job/.env' })
 
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+sgMail.setApiKey(SENDGRID_API_KEY HERE)
 
 
 
